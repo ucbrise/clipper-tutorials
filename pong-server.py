@@ -13,12 +13,7 @@ cur_dir = os.path.dirname(os.path.abspath(__file__))
 static_dir = os.path.join(cur_dir, "static")
 
 
-logging.basicConfig(
-    format='%(asctime)s %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s',
-    datefmt='%y-%m-%d:%H:%M:%S',
-    level=logging.INFO)
 
-logger = logging.getLogger(__name__)
 
 PORT = 3000
 
@@ -71,16 +66,12 @@ class PongServer(BaseHTTPRequestHandler):
         clipper_url = "http://{}/pong/predict".format(self.server.clipper_addr)
         content_length = int(self.headers['Content-Length'])
         logger.info(content_length)
-        print(content_length)
         logger.info(clipper_url)
-        # # Stupid workaround because Javascript's JSON.stringify will turn 1.0 into 1, which
+        # # workaround because Javascript's JSON.stringify will turn 1.0 into 1, which
         # # Clipper's JSON parsing will parse as an integer not a double
         req_json = json.loads(self.rfile.read(content_length).decode("utf-8"))
         req_json["input"] = [float(i) for i in req_json["input"]]
-        print(req_json)
-        # logger.info("DATA ------------------------------------------------------------------------")
-        # logger.info(req_json)
-        logger.debug("Request JSON: {}".format(req_json))
+        logger.info("Request JSON: {}".format(req_json))
         headers = {'Content-Type': 'application/json'}
         start = datetime.now()
         clipper_response = requests.post(clipper_url, headers=headers, data=json.dumps(req_json))
@@ -90,10 +81,9 @@ class PongServer(BaseHTTPRequestHandler):
             txt=clipper_response.text, time=latency))
         self.send_response(clipper_response.status_code)
         # Forward headers
-        print("Clipper responded with '{txt}' in {time} ms".format(
+        logger.info("Clipper responded with '{txt}' in {time} ms".format(
             txt=clipper_response.text, time=latency))
-        print(clipper_response.headers)
-        print(type(clipper_response.headers))
+
         for k, v in clipper_response.headers.items():
             self.send_header(k, v)
         self.end_headers()
@@ -114,4 +104,13 @@ def run(clipper_addr):
 
 if __name__ == '__main__':
     clipper_addr = sys.argv[1]
+
+    log_filename = sys.argv[2]
+    logging.basicConfig(
+        filename=log_filename,
+        format='%(asctime)s %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s',
+        datefmt='%y-%m-%d:%H:%M:%S',
+        level=logging.INFO)
+    logger = logging.getLogger(__name__)
+    
     run(clipper_addr)
