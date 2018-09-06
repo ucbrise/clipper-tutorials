@@ -349,3 +349,16 @@
 18-09-06:11:48:32 INFO     [pong-server.py:46] Local path: /Users/hari/Desktop/Cal/rise/clipper-tutorials/static/sounds/wall.wav
 18-09-06:11:48:32 INFO     [pong-server.py:46] Local path: /Users/hari/Desktop/Cal/rise/clipper-tutorials/static/sounds/goal.wav
 18-09-06:11:48:32 INFO     [pong-server.py:46] Local path: /favicon.ico
+18-09-06:12:08:48 INFO     [pong-server.py:99] Starting Pong Server on localhost:3000
+18-09-06:12:08:55 INFO     [pong-server.py:46] Local path: /Users/hari/Desktop/Cal/rise/clipper-tutorials/static/index.html
+18-09-06:12:08:55 INFO     [pong-server.py:46] Local path: /Users/hari/Desktop/Cal/rise/clipper-tutorials/static/pong.css
+18-09-06:12:08:55 INFO     [pong-server.py:46] Local path: /Users/hari/Desktop/Cal/rise/clipper-tutorials/static/game.js
+18-09-06:12:08:55 INFO     [pong-server.py:46] Local path: /Users/hari/Desktop/Cal/rise/clipper-tutorials/static/pong.js
+18-09-06:12:08:56 INFO     [pong-server.py:46] Local path: /Users/hari/Desktop/Cal/rise/clipper-tutorials/static/images/press1.png
+18-09-06:12:08:56 INFO     [pong-server.py:46] Local path: /Users/hari/Desktop/Cal/rise/clipper-tutorials/static/images/press2.png
+18-09-06:12:08:56 INFO     [pong-server.py:46] Local path: /Users/hari/Desktop/Cal/rise/clipper-tutorials/static/images/winner.png
+18-09-06:12:08:56 INFO     [pong-server.py:46] Local path: /Users/hari/Desktop/Cal/rise/clipper-tutorials/static/sounds/ping.wav
+18-09-06:12:08:56 INFO     [pong-server.py:46] Local path: /Users/hari/Desktop/Cal/rise/clipper-tutorials/static/sounds/pong.wav
+18-09-06:12:08:56 INFO     [pong-server.py:46] Local path: /Users/hari/Desktop/Cal/rise/clipper-tutorials/static/sounds/wall.wav
+18-09-06:12:08:56 INFO     [pong-server.py:46] Local path: /Users/hari/Desktop/Cal/rise/clipper-tutorials/static/sounds/goal.wav
+18-09-06:12:08:56 INFO     [pong-server.py:46] Local path: /favicon.ico
