@@ -20,7 +20,7 @@ const requestHandler = (request, response) => {
 		  	// toWrite += jsonObj['label']+","+jsonObj['leftPaddle_y']+","+jsonObj['ball_x'] +","+jsonObj['ball_y'] +","+jsonObj['ball_dx']+","+jsonObj['ball_dy'] +","+jsonObj['ball_x_prev']+","+jsonObj['ball_y_prev']
 		  	// write to a  file named output.txt
 
-		  	// var writer = csvWriter({ headers: ["label","paddle_y","0","ball_x","ball_y","ball_dx","ball_dy","x_prev","y_prev"]})
+		  	//var writer = csvWriter({ headers: ["label","paddle_y","0","ball_x","ball_y","ball_dx","ball_dy","x_prev","y_prev"]})
 			var writer = csvWriter({sendHeaders: false})
 			writer.pipe(fs.createWriteStream('out.csv', {flags: 'a'}))
 			writer.write(jsonObj)
@@ -49,6 +49,11 @@ const requestHandler = (request, response) => {
 }
 
 const server = http.createServer(requestHandler)
+
+var writer = csvWriter({ headers: ["label","paddle_y","0","ball_x","ball_y","ball_dx","ball_dy","x_prev","y_prev"]});
+writer.pipe(fs.createWriteStream('out.csv', {flags: 'w'}));
+writer.write();
+writer.end();
 
 server.listen(port, (err) => {
   if (err) {

@@ -95,7 +95,7 @@ class ThreadingServer(ThreadingMixIn, HTTPServer):
 
 
 def run(clipper_addr):
-    server_addr = ('', PORT)
+    server_addr = ('0.0.0.0', PORT)
     logger.info("Starting Pong Server on localhost:{port}".format(port=PORT))
     server = ThreadingServer(server_addr, PongServer)
     server.clipper_addr = clipper_addr
