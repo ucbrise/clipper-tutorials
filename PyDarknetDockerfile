@@ -8,11 +8,11 @@ RUN apt-get update \
 RUN apt-get install -y curl
 
 # Clone Darknet Repo
-RUN git clone https://github.com/RehanSD/darknet.git
+RUN git clone https://github.com/RehanSD/darknet.git /tmp/darknet
+RUN mv /tmp/darknet/* .
 
 # Make Darknet Project
-RUN cd darknet
-RUN make -C darknet/
+RUN make -j4
 
 #Download Weights
-RUN curl -o darknet/yolov3.weights https://pjreddie.com/media/files/yolov3.weights
+RUN curl -o yolov3.weights https://pjreddie.com/media/files/yolov3.weights
