@@ -15,7 +15,7 @@ static_dir = os.path.join(cur_dir, "static")
 
 
 
-PORT = 3000
+PORT = 4000
 
 
 # NOTE: This is definitely not secure
