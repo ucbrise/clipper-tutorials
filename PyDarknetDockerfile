@@ -16,8 +16,3 @@ RUN make -C darknet/
 
 #Download Weights
 RUN curl -o darknet/yolov3.weights https://pjreddie.com/media/files/yolov3.weights
-
-COPY containers/python/python_closure_container.py \
-       containers/python/container_entry.sh /container/
-
-ENTRYPOINT ["/container/container_entry.sh", "py-closure-container", "/container/python_closure_container.py"]
