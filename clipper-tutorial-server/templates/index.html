@@ -1,0 +1,25 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Clipper Strata Tutorial</title>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Clipper Tutorial @ Strata!</h1>
+        <p class="lead">In this page, we will assign you a VM (virtual machine) to work on the tutorial.</p>
+        <hr class="my-4">
+        <p>Please enter your email below; we will only use this email once (sending you the tutorial material after conference).</p>
+        
+
+        <form action="{{ url_for('user_email') }}" method="POST">
+            <div class="form-group">
+              <label for="InputEmail1">Email address</label>
+              <input type="email" name="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <button type="submit" class="btn btn-primary" >Submit</button>
+        </form>
+
+      </div>
+
+</body>

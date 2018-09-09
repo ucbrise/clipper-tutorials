@@ -1,0 +1,1 @@
+This app will pop from a redis list named "provisioned_vms" and set user email to that link. 
