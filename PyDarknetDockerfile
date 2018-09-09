@@ -15,4 +15,4 @@ RUN mv /tmp/darknet/* .
 RUN make -j4
 
 #Download Weights
-RUN curl -o yolov3.weights https://pjreddie.com/media/files/yolov3.weights
+RUN curl -o yolov3-tiny.weights https://pjreddie.com/media/files/yolov3-tiny.weights
