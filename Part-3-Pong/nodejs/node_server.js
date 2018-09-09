@@ -50,11 +50,6 @@ const requestHandler = (request, response) => {
 
 const server = http.createServer(requestHandler)
 
-var writer = csvWriter({ headers: ["label","paddle_y","0","ball_x","ball_y","ball_dx","ball_dy","x_prev","y_prev"]});
-writer.pipe(fs.createWriteStream('out.csv', {flags: 'w'}));
-writer.write();
-writer.end();
-
 server.listen(port, (err) => {
   if (err) {
     return console.log('something bad happened', err)
