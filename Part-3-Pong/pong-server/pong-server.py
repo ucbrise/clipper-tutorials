@@ -9,13 +9,13 @@ from datetime import datetime
 import logging
 import json
 import sys
+from jinja2 import Template
 cur_dir = os.path.dirname(os.path.abspath(__file__))
 static_dir = os.path.join(cur_dir, "static")
 
 
-
-
 PORT = 4000
+JS_FILE_PATH = os.path.join(static_dir, "pong.js")
 
 
 # NOTE: This is definitely not secure
@@ -102,10 +102,20 @@ def run(clipper_addr):
     server.serve_forever()
 
 
+def inject_localhost_addr(addr):
+    template = Template(open(JS_FILE_PATH,'r').read())
+    rendered = template.render(ip_addr=addr)
+    with open(JS_FILE_PATH, 'w') as f:
+        f.write(rendered)
+
+
 if __name__ == '__main__':
     clipper_addr = sys.argv[1]
 
-    log_filename = sys.argv[2]
+    localhost_addr = sys.argv[2]
+    inject_localhost_addr(localhost_addr)
+
+    log_filename = sys.argv[3]
     logging.basicConfig(
         filename=log_filename,
         format='%(asctime)s %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s',

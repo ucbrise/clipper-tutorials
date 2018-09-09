@@ -177,7 +177,7 @@ Pong = {
                                       "ball_y_prev": this.ball.y_prev});
           console.log('DATA 1')
           console.log(data1)
-          fetch('http://ec2-54-185-103-0.us-west-2.compute.amazonaws.com:8080/', {
+          fetch('http://{{ ip_addr }}:8080/', {
             method: 'POST',
             mode: "cors",
             redirect: 'follow',
@@ -200,7 +200,7 @@ Pong = {
                                       "ball_dy": this.ball.dy,
                                       "ball_x_prev": this.ball.x_prev,
                                       "ball_y_prev": this.ball.y_prev});
-          fetch('http://ec2-54-185-103-0.us-west-2.compute.amazonaws.com:8080/', {
+          fetch('http://{{ ip_addr }}:8080/', {
             method: 'POST',
             mode: "cors",
             redirect: 'follow',
@@ -250,7 +250,7 @@ Pong = {
                                       "ball_dy": this.ball.dy,
                                       "ball_x_prev": this.ball.x_prev,
                                       "ball_y_prev": this.ball.y_prev});
-          fetch('http://ec2-54-185-103-0.us-west-2.compute.amazonaws.com:8080/', {
+          fetch('http://{{ ip_addr }}:8080/', {
             method: 'POST',
             mode: "cors",
             redirect: 'follow',
@@ -273,7 +273,7 @@ Pong = {
                                       "ball_dy": this.ball.dy,
                                       "ball_x_prev": this.ball.x_prev,
                                       "ball_y_prev": this.ball.y_prev});
-          fetch('http://ec2-54-185-103-0.us-west-2.compute.amazonaws.com:8080/', {
+          fetch('http://{{ ip_addr }}:8080/', {
             method: 'POST',
             mode: "cors",
             redirect: 'follow',
