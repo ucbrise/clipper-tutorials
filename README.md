@@ -7,18 +7,18 @@ Welcome to Clipper Tutorial! To reproduce the environment, there are two approac
 	- Docker
 	- Python packages: 
 	```
-matplotlib
-numpy
-pandas
-scipy
-scikit-learn
-pillow
-clipper_admin
-cloudpickle==0.5.3
-jupyterlab
-torch==0.4.0
-torchvision
-jinja2
+		matplotlib
+		numpy
+		pandas
+		scipy
+		scikit-learn
+		pillow
+		clipper_admin
+		cloudpickle==0.5.3
+		jupyterlab
+		torch==0.4.0
+		torchvision
+		jinja2
 	```
 	- Start Nodejs server that writes pong games status to a file
 		1. `cd $REPO/other/nodejs; make` will build the image
