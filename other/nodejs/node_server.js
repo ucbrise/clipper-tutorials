@@ -5,7 +5,7 @@ const port = 8080
 
 const requestHandler = (request, response) => {
 	response.setHeader('Access-Control-Allow-Origin', '*');
-	response.setHeader("Access-Control-Allow-Headers", "*");
+	response.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Origin, Content-Type");
 	console.log(request.method)
 	if(request.method =="POST"){
 		var body = "";
